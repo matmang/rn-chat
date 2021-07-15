@@ -3,6 +3,7 @@ import { ThemeContext } from 'styled-components/native';
 import styled from 'styled-components/native';
 import { Button, Image, Input } from '../components';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
+import {KeyboardAwareScrollView} from 'react-native-keyboard-aware-scroll-view';
 
 const Container = styled.View`
 flex: 1;
@@ -29,6 +30,11 @@ const Signin = ({navigation}) => {
     }
 
     return(
+        <KeyboardAwareScrollView 
+            extraScrollHeight={20}
+            contentContainerStyle={{
+                flex: 1,
+            }}>
         <Container insets={insets}>
             <Image url= {LOGO} />
             <Input
@@ -60,6 +66,7 @@ const Signin = ({navigation}) => {
                 textStyle={{color: theme.btnTextLink, fontSize: 18}}
             />
         </Container>
+        </KeyboardAwareScrollView>
     );
 }
 
