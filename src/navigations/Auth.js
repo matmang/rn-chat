@@ -9,7 +9,9 @@ const Stack = createStackNavigator();
 const Auth = () => {
     const theme = useContext(ThemeContext);
     return (
-        <Stack.Navigator>
+        <Stack.Navigator screenOptions={{
+            cardStyle: {backgroundColor: theme.background},
+        }}>
             <Stack.Screen 
                 name="Signin" 
                 component={Signin}
