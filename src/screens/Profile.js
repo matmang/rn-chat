@@ -9,7 +9,7 @@ background-color: ${({theme}) => theme.background};
 `
 
 const Profile = ({navigation, route}) => {
-    const {setUser} = userContext(UserContext);
+    const {setUser} = useContext(UserContext);
 
     return (
     <Container>
